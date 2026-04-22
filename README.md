@@ -1,30 +1,54 @@
-# @pipeworx/mcp-wikiviews
+# mcp-wikiviews
 
-MCP server for Wikipedia pageview statistics
+Wikiviews MCP — wraps the Wikimedia Pageviews API (free, no auth)
+
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 250+ live data sources.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
-| `get_article_views` | Get daily pageview counts for a specific Wikipedia article |
-| `get_top_articles` | Get the most viewed Wikipedia articles for a specific day |
-| `get_project_views` | Get aggregate daily pageview totals for English Wikipedia |
 
-## Quickstart (Pipeworx Gateway)
+## Quick Start
 
-```bash
-curl -X POST https://gateway.pipeworx.io/mcp \
-  -H "Content-Type: application/json" \
-  -d '{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "tools/call",
-    "params": {
-      "name": "get_article_views",
-      "arguments": { "title": "Albert_Einstein", "start": "20240101", "end": "20240131" }
+Add to your MCP client (Claude Desktop, Cursor, Windsurf, etc.):
+
+```json
+{
+  "mcpServers": {
+    "wikiviews": {
+      "url": "https://gateway.pipeworx.io/wikiviews/mcp"
     }
-  }'
+  }
+}
 ```
+
+Or connect to the full Pipeworx gateway for access to all 250+ data sources:
+
+```json
+{
+  "mcpServers": {
+    "pipeworx": {
+      "url": "https://gateway.pipeworx.io/mcp"
+    }
+  }
+}
+```
+
+## Using with ask_pipeworx
+
+Instead of calling tools directly, you can ask questions in plain English:
+
+```
+ask_pipeworx({ question: "your question about Wikiviews data" })
+```
+
+The gateway picks the right tool and fills the arguments automatically.
+
+## More
+
+- [All tools and guides](https://github.com/pipeworx-io/examples)
+- [pipeworx.io](https://pipeworx.io)
 
 ## License
 

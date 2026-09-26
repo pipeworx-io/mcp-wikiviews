@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-wikiviews",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Wikiviews MCP — wraps the Wikimedia Pageviews API (free, no auth)",
   "type": "module",
   "main": "src/index.ts",
@@ -26,7 +26,7 @@
     "@cloudflare/workers-types": "^4.20260405.1"
   },
   "pipeworx": {
-    "sourceHash": "v1-75b4c5927fcc3642143ce707cde5881df3fc489c1af7c6bc08ae4f95280773d1",
-    "sourceCommit": "b0fb3c31386cf0256dcf1e2f1b3440435a87ec35"
+    "sourceHash": "v1-272fc8759b892ea4e252a9f3122a6337225714056e820035acfa5d35dbfa0fba",
+    "sourceCommit": "2cb50b368da3267446f2b6f6a3ddbd3d0eed3d73"
   }
 }

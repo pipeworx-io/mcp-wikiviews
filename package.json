@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-wikiviews",
-  "version": "1.0.2",
-  "description": "Wikiviews MCP — wraps the Wikimedia Pageviews API (free, no auth)",
+  "version": "1.1.0",
+  "description": "Wikiviews MCP — wraps the Wikimedia Pageviews API (free, no auth) https://wikimedia.org/api/rest_v1/metrics/pageviews",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-wikiviews": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "wikiviews"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-wikiviews.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/wikiviews",
   "pipeworx": {
-    "sourceHash": "v1-272fc8759b892ea4e252a9f3122a6337225714056e820035acfa5d35dbfa0fba",
-    "sourceCommit": "2cb50b368da3267446f2b6f6a3ddbd3d0eed3d73"
+    "mode": "gateway",
+    "slug": "wikiviews",
+    "gatewaySlug": "wikiviews",
+    "sourceHash": "v1-b90a867697de9a358de18a0a65150098dbe2e9b58bad1949e487ce13a415e640",
+    "sourceCommit": "98853f34516646cb7c4c1460f09249b262c0269e"
   }
 }
